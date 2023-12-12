@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Dashboard container</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <div class="logo">
+          <button class="sidebar-toggler" onclick="sidebarToggle()">
+            <img class="logo__icon" src="svg/setting.svg" alt="gear" />
+          </button>
+          <img class="logo__icon" src="svg/setting.svg" alt="gear" />
+          <div class="logo__text">Dashboard</div>
+          <div class="logo__version">v.01</div>
+        </div>
+        <div class="navbar">
+          <button class="navbar__button">
+            <svg class="navbar__button-icon">
+              <use
+                xlink:href="svg/key-scuare.svg#img"
+                href="svg/key-scuare.svg#img"></use>
+            </svg>
+            <div class="navbar__button-text">Dashboard</div>
+          </button>
+          <button class="navbar__button">
+            <svg class="navbar__button-icon">
+              <use
+                xlink:href="svg/3d-square.svg#img"
+                href="svg/3d-square.svg#img"></use>
+            </svg>
+            <div class="navbar__button-text">Product</div>
+            <svg class="navbar__button-arrow">
+              <use
+                xlink:href="svg/chevron-right.svg#img"
+                href="svg/chevron-right.svg#img"></use>
+            </svg>
+          </button>
+          <button class="navbar__button navbar__button_active">
+            <svg class="navbar__button-icon">
+              <use
+                xlink:href="svg/user-square.svg#img"
+                href="svg/user-square.svg#img"></use>
+            </svg>
+            <div class="navbar__button-text">Customers</div>
+            <svg class="navbar__button-arrow">
+              <use
+                xlink:href="svg/chevron-right.svg#img"
+                href="svg/chevron-right.svg#img"></use>
+            </svg>
+          </button>
+          <button class="navbar__button">
+            <svg class="navbar__button-icon">
+              <use
+                xlink:href="svg/wallet-money.svg#img"
+                href="svg/wallet-money.svg#img"></use>
+            </svg>
+            <div class="navbar__button-text">Income</div>
+            <svg class="navbar__button-arrow">
+              <use
+                xlink:href="svg/chevron-right.svg#img"
+                href="svg/chevron-right.svg#img"></use>
+            </svg>
+          </button>
+          <button class="navbar__button">
+            <svg class="navbar__button-icon">
+              <use
+                xlink:href="svg/discount-shape.svg#img"
+                href="svg/discount-shape.svg#img"></use>
+            </svg>
+            <div class="navbar__button-text">Promote</div>
+            <svg class="navbar__button-arrow">
+              <use
+                xlink:href="svg/chevron-right.svg#img"
+                href="svg/chevron-right.svg#img"></use>
+            </svg>
+          </button>
+          <button class="navbar__button">
+            <svg class="navbar__button-icon">
+              <use
+                xlink:href="svg/message-question.svg#img"
+                href="svg/message-question.svg#img"></use>
+            </svg>
+            <div class="navbar__button-text">Help</div>
+            <svg class="navbar__button-arrow">
+              <use
+                xlink:href="svg/chevron-right.svg#img"
+                href="svg/chevron-right.svg#img"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="user">
+          <img class="user__image" src="user_photo.png" alt="photo" />
+          <div class="user__info">
+            <div class="user__name">Evano</div>
+            <div class="user__profession">Project Manager</div>
+          </div>
+        </div>
+      </aside>
+      <main class="main">
+        <div class="content">
+          <div class="header">
+            <button class="sidebar-toggler" onclick="sidebarToggle()">
+              <img class="logo__icon" src="svg/setting.svg" alt="gear" />
+            </button>
+            <h1 class="greetings">Hello Evano 👋🏼,</h1>
+          </div>
+          <div class="panel">
+            <div class="panel__header panel-indents">
+              <div class="panel__title-block">
+                <h2 class="panel__title">All Customers</h2>
+                <div class="panel__subtitle">Active Members</div>
+              </div>
+              <form class="search-form">
+                <button class="search-form__button">
+                  <img src="svg/search.svg" alt="search" />
+                </button>
+                <input
+                  class="search-form__input"
+                  type="text"
+                  placeholder="Search" />
+              </form>
+            </div>
+            <div class="customers-table">
+              <div class="customers-table__header">
+                <div class="customers-table__column-name">Customer Name</div>
+                <div class="customers-table__column-company">Company</div>
+                <div class="customers-table__column-phone">Phone Number</div>
+                <div class="customers-table__column-email">Email</div>
+                <div class="customers-table__column-country">Country</div>
+                <div class="customers-table__column-status-header">Status</div>
+              </div>
+              <div class="customers-table__hr"></div>
+            </div>
+            <div class="paginator panel-indents">
+              <div class="paginator__info">
+                Showing data 1 to 8 of 256K entries
+              </div>
+              <div class="paginator__button-group">
+                <button class="paginator__button"><</button>
+                <button class="paginator__button paginator__button_active">
+                  1
+                </button>
+                <button class="paginator__button">2</button>
+                <button class="paginator__button">3</button>
+                <button class="paginator__button">4</button>
+                <div class="paginator__dots">...</div>
+                <button class="paginator__button">40</button>
+                <button class="paginator__button">></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <template id="desktop-table-row">
+      <div class="customers-table__row">
+        <div class="customers-table__row-part">
+          <div class="customers-table__cell">
+            <div class="customers-table__hint">Customer Name:</div>
+            <div class="customers-table__column-name"></div>
+          </div>
+          <div class="customers-table__cell">
+            <div class="customers-table__hint">Company:</div>
+            <div class="customers-table__column-company"></div>
+          </div>
+        </div>
+        <div class="customers-table__row-part">
+          <div class="customers-table__cell">
+            <div class="customers-table__hint">Phone Number:</div>
+            <div class="customers-table__column-phone"></div>
+          </div>
+          <div class="customers-table__cell">
+            <div class="customers-table__hint">Email:</div>
+            <div class="customers-table__column-email"></div>
+          </div>
+        </div>
+        <div class="customers-table__row-part">
+          <div class="customers-table__cell">
+            <div class="customers-table__hint">Country:</div>
+            <div class="customers-table__column-country"></div>
+          </div>
+          <div class="customers-table__cell">
+            <div class="customers-table__hint">Status:</div>
+            <div class="customers-table__column-status"></div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <script src="script.js"></script>
+  </body>
+</html>
